@@ -2,7 +2,8 @@ import torch
 from abc import abstractclassmethod, ABC
 from typing import Sequence
 import random
-
+from Hook import SaveInput
+from utils import get_index
 class BaseStrategy(ABC):
     def __call__(self, weights, amount=0.0):
         return self.apply(weights, amount=amount)
@@ -42,3 +43,8 @@ class L1Strategy(LNStrategy):
 class L2Strategy(LNStrategy):
     def __init__(self):
         super(L2Strategy, self).__init__(p=2)
+
+class ThiNetStrategy(BaseStrategy):
+    def __init(self, model ,module , amount, data_dir):
+        
+    
